@@ -34,7 +34,7 @@ export default function ContactComponent() {
 							data-aos="fade-up"
 							data-aos-delay={200}
 						>
-							<form action="forms/contact.php" method="post" role="form" className="php-email-form">
+							<form action="forms/contact.php" method="post" className="php-email-form">
 								<div className="form-row">
 									<div className="form-group col-md-6">
 										<label htmlFor="name">Your Name</label>
