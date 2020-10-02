@@ -82,7 +82,12 @@ function App() {
 										className="col-lg-4 col-sm-6 col-11 mx-auto my-4"
 										style={{ textAlign: "center" }}
 									>
-										<img src={i.img} className="angels-img" style={{ borderRadius: "100%" }} />
+										<img
+											src={i.img}
+											className="angels-img"
+											alt="angel"
+											style={{ borderRadius: "100%" }}
+										/>
 										<h3 className=" mt-2">{i.name}</h3>
 										<p className="mt-0" style={{ textAlign: "center" }}>
 											<b>{i.designation}</b>
@@ -140,6 +145,7 @@ function App() {
 											src={i.img}
 											className="angels-img"
 											style={{ borderRadius: "10% 0 10% 0" }}
+											alt=""
 										/>
 										<h3 className=" mt-2">{i.name}</h3>
 										<p className="mt-0" style={{ textAlign: "center" }}>
@@ -190,7 +196,7 @@ function App() {
 								].map((i, k) => (
 									<div className="col-lg-4 col-md-6 portfolio-item filter-app">
 										<div className="portfolio-wrap">
-											<img src={i.img} className="img-fluid" alt />
+											<img src={i.img} className="img-fluid" alt="" />
 											<div className="portfolio-links">
 												<a
 													href={i.img}
