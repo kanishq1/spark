@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Navbar() {
+	console.log(window.location.pathname);
 	return (
 		<>
 			<header id="header" className="fixed-top">
@@ -17,23 +18,27 @@ export default function Navbar() {
 					</div>
 					<nav style={{ marginRight: "6vw" }} className="nav-menu d-none d-lg-block">
 						<ul>
-							<li className="active">
+							<li className={window.location.pathname === "/" ? "active" : ""}>
 								<a href="/">Home</a>
 							</li>
-							<li>
-								<a href="/about">About Spark</a>
+							<li className={window.location.pathname === "/about" ? "active" : ""}>
+								<a href="/#about" className="smoothscroll">
+									About Spark
+								</a>
 							</li>
-							<li>
-								<a href="/services">Our Investors</a>
+							<li className={window.location.pathname === "/our-investors" ? "active" : ""}>
+								<a href="/our-investors">Our Investors</a>
 							</li>
-							<li>
+							<li className={window.location.pathname === "/portfolio" ? "active" : ""}>
 								<a href="/portfolio">Portfolio</a>
 							</li>
-							<li>
+							<li className={window.location.pathname === "/team" ? "active" : ""}>
 								<a href="/team">Team</a>
 							</li>
-							<li>
-								<a href="/contact">Contact Us</a>
+							<li className={window.location.pathname === "/contact" ? "active" : ""}>
+								<a href="/#contact" className="smoothscroll">
+									Contact Us
+								</a>
 							</li>
 						</ul>
 					</nav>

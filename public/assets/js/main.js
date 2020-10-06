@@ -17,19 +17,19 @@
 			e.preventDefault();
 			var target = $(this.hash);
 			if (target.length) {
-				var scrollto = target.offset().top - scrolltoOffset;
+				// var scrollto = target.offset().top - scrolltoOffset;
 
-				if ($(this).attr("href") == "#header") {
-					scrollto = 0;
-				}
+				// if ($(this).attr("href") == "#header") {
+				// 	scrollto = 0;
+				// }
 
-				$("html, body").animate(
-					{
-						scrollTop: scrollto,
-					},
-					1500,
-					"easeInOutExpo"
-				);
+				// $("html, body").animate(
+				// 	{
+				// 		scrollTop: scrollto,
+				// 	},
+				// 	1500,
+				// 	"easeInOutExpo"
+				// );
 
 				if ($(this).parents(".nav-menu, .mobile-nav").length) {
 					$(".nav-menu .active, .mobile-nav .active").removeClass("active");
@@ -126,59 +126,25 @@
 				delay: 1000,
 			});
 		// Mobile Navigation
-		if (document.getElementsByClassName("nav-menu")[0]) {
-			console.log("hey");
-			// Mobile Navigation
-			if ($(".nav-menu").length === 1) {
-				var $mobile_nav = $(".nav-menu").clone().prop({
-					class: "mobile-nav d-lg-none",
-				});
-				$("body").append($mobile_nav);
-				$("body").prepend(
-					'<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
-				);
-				$("body").append('<div class="mobile-nav-overly"></div>');
 
-				$(document).on("click", ".mobile-nav-toggle", function (e) {
-					$("body").toggleClass("mobile-nav-active");
-					$(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
-					$(".mobile-nav-overly").toggle();
-				});
-
-				$(document).on("click", ".mobile-nav .drop-down > a", function (e) {
-					e.preventDefault();
-					$(this).next().slideToggle(300);
-					$(this).parent().toggleClass("active");
-				});
-
-				$(document).click(function (e) {
-					var container = $(".mobile-nav, .mobile-nav-toggle");
-					if (!container.is(e.target) && container.has(e.target).length === 0) {
-						if ($("body").hasClass("mobile-nav-active")) {
-							$("body").removeClass("mobile-nav-active");
-							$(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
-							$(".mobile-nav-overly").fadeOut();
-						}
-					}
-				});
-			} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
-				$(".mobile-nav, .mobile-nav-toggle").hide();
+		$(".smoothscroll").on("click", function (e) {
+			console.log(e.target.hash);
+			if (e.target.hash) {
+				var initial_nav = e.target.hash;
+				console.log(initial_nav);
+				if (initial_nav) {
+					var scrollto = $(initial_nav).offset().top - $("#header").outerHeight() - 1;
+					console.log(scrollto);
+					$("html, body").animate(
+						{
+							scrollTop: scrollto,
+						},
+						1500,
+						"easeInOutExpo"
+					);
+				}
 			}
-		}
-
-		if (window.location.hash) {
-			var initial_nav = window.location.hash;
-			if ($(initial_nav).length) {
-				var scrollto = $(initial_nav).offset().top - scrolltoOffset;
-				$("html, body").animate(
-					{
-						scrollTop: scrollto,
-					},
-					1500,
-					"easeInOutExpo"
-				);
-			}
-		}
+		});
 	});
 
 	// Navigation active state on scroll
@@ -233,6 +199,46 @@
 
 	// Porfolio isotope and filter
 	$(window).on("load", function () {
+		if (document.getElementsByClassName("nav-menu")[0]) {
+			console.log("hey");
+			// Mobile Navigation
+			if ($(".nav-menu").length === 1) {
+				var $mobile_nav = $(".nav-menu").clone().prop({
+					class: "mobile-nav d-lg-none",
+				});
+				$("#root").append($mobile_nav);
+				$("#root").prepend(
+					'<button type="button" class="mobile-nav-toggle d-lg-none"><i class="icofont-navigation-menu"></i></button>'
+				);
+				$("#root").append('<div class="mobile-nav-overly"></div>');
+
+				$(document).on("click", ".mobile-nav-toggle", function (e) {
+					$("#root").toggleClass("mobile-nav-active");
+					$(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
+					$(".mobile-nav-overly").toggle();
+				});
+
+				$(document).on("click", ".mobile-nav .drop-down > a", function (e) {
+					e.preventDefault();
+					$(this).next().slideToggle(300);
+					$(this).parent().toggleClass("active");
+				});
+
+				$(document).click(function (e) {
+					var container = $(".mobile-nav, .mobile-nav-toggle");
+					if (!container.is(e.target) && container.has(e.target).length === 0) {
+						if ($("#root").hasClass("mobile-nav-active")) {
+							$("#root").removeClass("mobile-nav-active");
+							$(".mobile-nav-toggle i").toggleClass("icofont-navigation-menu icofont-close");
+							$(".mobile-nav-overly").fadeOut();
+						}
+					}
+				});
+			} else if ($(".mobile-nav, .mobile-nav-toggle").length) {
+				$(".mobile-nav, .mobile-nav-toggle").hide();
+			}
+		}
+
 		var portfolioIsotope = $(".portfolio-container").isotope({
 			itemSelector: ".portfolio-item",
 			layoutMode: "fitRows",
