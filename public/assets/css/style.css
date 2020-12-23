@@ -107,7 +107,34 @@ h6,
 	margin: 0;
 	max-height: 63px;
 }
+#header1 {
+	height: 92px;
+	transition: all 0.5s;
+	z-index: 997;
+	transition: all 0.5s;
+	padding: 15px 0;
+	background: #fff0;
+}
+#header1 .logo h1 {
+	font-size: 30px;
+	margin: 0;
+	padding: 6px 0;
+	line-height: 1;
+	font-weight: 400;
+	letter-spacing: 2px;
+}
 
+#header1 .logo h1 a,
+#header1 .logo h1 a:hover {
+	color: #7a6960;
+	text-decoration: none;
+}
+
+#header1 .logo img {
+	padding: 0;
+	margin: 0;
+	max-height: 63px;
+}
 #main {
 	margin-top: 72px;
 }
@@ -338,7 +365,7 @@ h6,
 }
 
 .mobile-nav-toggle i {
-	color: #fff;
+	color: #0008;
 }
 
 .mobile-nav-overly {
@@ -460,7 +487,13 @@ h6,
 	color: #fff;
 	background: #eb5d1e;
 }
-
+.btn-danger {
+	background: #eb5d1e;
+	color: white !important;
+}
+.btn-danger:hover {
+	background: #ef7f4d;
+}
 #hero .btn-get-started:hover {
 	background: #ef7f4d;
 }
@@ -551,7 +584,7 @@ section {
 	padding: 60px 0;
 }
 .section-padding {
-	padding: 120px 0;
+	padding: 150px 0;
 }
 .section-bg {
 	background-color: #fef8f5;
@@ -1466,17 +1499,17 @@ section {
 }
 
 #footer .footer-top .social-links a {
-	font-size: 18px;
+	font-size: 35px;
 	display: inline-block;
 	background: #eb5d1e;
 	color: #fff;
 	line-height: 1;
-	padding: 8px 0;
+	padding: 13px 0;
 	margin-right: 4px;
 	border-radius: 50%;
 	text-align: center;
-	width: 36px;
-	height: 36px;
+	width: 65px;
+	height: 65px;
 	transition: 0.3s;
 }
 
@@ -1510,4 +1543,51 @@ section {
 		text-align-last: center;
 		padding: 3px 0;
 	}
+}
+@media (max-width: 990px) {
+	#about-nav,
+	#contact-nav {
+		display: none;
+	}
+}
+.card1 {
+	height: 15rem;
+	width: 10rem;
+	-webkit-perspective: 100rem;
+	perspective: 100rem;
+	position: relative;
+}
+.card__side {
+	height: 100%;
+	width: 100%;
+	color: white;
+	font-weight: bold;
+	display: -webkit-box;
+	display: flex;
+	-webkit-box-align: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+	-webkit-transition: all 700ms ease;
+	transition: all 700ms ease;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+.card__side--front {
+}
+.card__side--back {
+	background-color: #f1f1f178;
+	-webkit-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+}
+.card1:hover .card__side--front {
+	-webkit-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+.card1:hover .card__side--back {
+	-webkit-transform: rotateY(0);
+	transform: rotateY(0);
 }

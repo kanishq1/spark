@@ -7,7 +7,7 @@ export default function ContactComponent() {
 				<div className="container mt-4">
 					<div className="section-title" data-aos="fade-up">
 						<h2>Contact Us</h2>
-						<p>Contact us the get started</p>
+						<p>Got an enquiry ?</p>
 					</div>
 					<div className="row justify-content-center">
 						{/* <div className="col-lg-5 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay={100}>
@@ -30,11 +30,18 @@ export default function ContactComponent() {
 							</div>
 						</div> */}
 						<div
-							className="col-lg-9 mt-5 mt-lg-0 d-flex align-items-stretch"
+							className="col-lg-9 mt-3 mb-3 mt-lg-0 d-flex align-items-stretch justify-content-center"
 							data-aos="fade-up"
 							data-aos-delay={200}
 						>
-							<form action="forms/contact.php" method="post" className="php-email-form">
+							<a
+								href="https://forms.gle/UGHiK3xnrFbwNFd47"
+								target="_blank"
+								className="btn btn-danger py-3 px-5"
+							>
+								Contact Now
+							</a>
+							{/* <form action="forms/contact.php" method="post" className="php-email-form">
 								<div className="form-row">
 									<div className="form-group col-md-6">
 										<label htmlFor="name">Your Name</label>
@@ -93,7 +100,7 @@ export default function ContactComponent() {
 								<div className="text-center">
 									<button type="submit">Send Message</button>
 								</div>
-							</form>
+							</form> */}
 						</div>
 					</div>
 				</div>

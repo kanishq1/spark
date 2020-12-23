@@ -20,11 +20,33 @@ export default function Hero() {
 							{/* <h1 class="ml15">
 							</h1> */}
 							<div className=" ml15">
-								<button type="button" className="btn btn-outline-light btn-lg mt-5 word">
+								<a
+									href="https://bit.ly/bits-spark11"
+									target="_blank"
+									className="btn btn-outline-light btn-lg mt-5 word"
+								>
 									APPLY NOW
-								</button>
+								</a>
 							</div>
 						</div>
+					</div>
+					<div
+						style={{
+							position: "absolute",
+							left: "0",
+							bottom: "50px",
+							width: "100%",
+							textAlign: "center",
+							color: "white",
+						}}
+					>
+						<a
+							style={{ color: "white", fontSize: "2rem" }}
+							href="/#about"
+							className="btn btn-scroll-down mx-auto px-3 py-0 smoothscroll"
+						>
+							<i className="fa fa-angle-down" style={{ color: "white" }} aria-hidden="true"></i>
+						</a>
 					</div>
 				</div>
 			</section>

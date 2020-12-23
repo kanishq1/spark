@@ -1,9 +1,9 @@
 import React from "react";
 
-export default function Navbar() {
+export default function Navbar1() {
 	return (
 		<>
-			<header id="header" className="fixed-top">
+			<header id="header1" className="fixed-top header-shadow">
 				<div className="container-fluid d-flex">
 					<div className="logo mr-auto">
 						<a href="/">
@@ -15,12 +15,12 @@ export default function Navbar() {
 							/>
 						</a>
 					</div>
-					<nav style={{ marginRight: "6vw" }} className="nav-menu d-none d-lg-block">
+					<nav style={{ marginRight: "6vw" }} className="nav-menu d-none d-lg-block ">
 						<ul>
 							<li className={window.location.pathname === "/" && !window.location.hash ? "active" : ""}>
 								<a href="/index.html">Home</a>
 							</li>
-							<li id="about-nav" className={window.location.hash === "#about" ? "active " : ""}>
+							<li id="about-nav" className={window.location.hash === "#about" ? "active" : ""}>
 								<a href="/#about" className="smoothscroll">
 									About Spark
 								</a>

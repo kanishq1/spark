@@ -1,8 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 // import "./App.css";
 import Hero from "./Components/Hero";
+const loader = document.querySelector(".preloader");
 
+const showLoader = () => {
+	if (typeof loader?.classList?.remove === "function") {
+		loader.classList.remove("preloader");
+	}
+};
+const addClass = () => {
+	if (typeof loader?.classList?.remove === "function") {
+		loader.classList.add("loader-hide");
+	}
+};
 function App() {
+	useEffect(() => {
+		console.log("hey");
+		showLoader();
+		addClass();
+	}, []);
 	return (
 		<div className="App">
 			<div>
